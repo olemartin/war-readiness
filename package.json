@@ -1,0 +1,15 @@
+{
+  "name": "war-readiness",
+  "version": "1.0.0",
+  "description": "",
+  "main": "readiness.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "node-fetch": "^2.2.0",
+    "text-table": "^0.2.0"
+  }
+}
