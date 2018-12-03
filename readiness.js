@@ -10,9 +10,6 @@ exports.handler = async (event, context, callback) => {
     });
 
     const clanData = await clanDataResponse.json();
-
-    console.log("clanData", clanData);
-
     const clanTags = clanData.members.map(data => data.tag);
 
     let fetchedPlayers = [];
@@ -30,8 +27,6 @@ exports.handler = async (event, context, callback) => {
             throw new Error("Unknown error =, " + response.status + ", " + response.text());
         }
     }
-
-    //fetchedPlayers = await Promise.all(fetchedPlayers);
 
     const warReadinessTable = fetchedPlayers
         .map(player => {
@@ -62,10 +57,10 @@ exports.handler = async (event, context, callback) => {
 
             const retur = {
                 name: player.name,
-                legendary: percent.legendary / 87.0 * 100,
-                gold: percent.gold / 87.0 * 100,
-                silver: percent.silver / 87.0 * 100,
-                bronze: percent.bronze / 87.0 * 100,
+                legendary: percent.legendary / 88.0 * 100,
+                gold: percent.gold / 88.0 * 100,
+                silver: percent.silver / 88.0 * 100,
+                bronze: percent.bronze / 88.0 * 100,
             };
             console.log(retur);
             return retur;
