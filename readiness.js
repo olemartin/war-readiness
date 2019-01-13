@@ -40,7 +40,7 @@ exports.handler = async (event, context, callback) => {
 
             for (let j = 0; j < userCards.length; j++) {
                 const card = userCards[j];
-                const levelDiff = card.maxLevel - card.level;
+                const levelDiff = card.maxLevel - card.displayLevel;
                 switch (levelDiff) {
                     case 0:
                     case 1:
@@ -57,10 +57,10 @@ exports.handler = async (event, context, callback) => {
 
             const retur = {
                 name: player.name,
-                legendary: percent.legendary / 88.0 * 100,
-                gold: percent.gold / 88.0 * 100,
-                silver: percent.silver / 88.0 * 100,
-                bronze: percent.bronze / 88.0 * 100,
+                legendary: percent.legendary / 90.0 * 100,
+                gold: percent.gold / 90.0 * 100,
+                silver: percent.silver / 90.0 * 100,
+                bronze: percent.bronze / 90.0 * 100,
             };
             console.log(retur);
             return retur;
