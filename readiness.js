@@ -57,10 +57,11 @@ exports.handler = async (event, context, callback) => {
 
             const retur = {
                 name: player.name,
-                legendary: percent.legendary / 90.0 * 100,
-                gold: percent.gold / 90.0 * 100,
-                silver: percent.silver / 90.0 * 100,
-                bronze: percent.bronze / 90.0 * 100,
+                warDayWins: player.games.warDayWins,
+                legendary: percent.legendary / 91.0 * 100,
+                gold: percent.gold / 91.0 * 100,
+                silver: percent.silver / 91.0 * 100,
+                bronze: percent.bronze / 91.0 * 100,
             };
             console.log(retur);
             return retur;
@@ -68,6 +69,7 @@ exports.handler = async (event, context, callback) => {
         .sort((a, b) => b[clanLeague] - a[clanLeague])
         .map(r => [
             r.name,
+            r.warDayWins,
             r.legendary.toFixed(0) + "%",
             r.gold.toFixed(0) + "%",
             r.silver.toFixed(0) + "%",
@@ -77,7 +79,7 @@ exports.handler = async (event, context, callback) => {
     console.log(warReadinessTable);
     await writeClanwarReadinessDescription(event.discord_key);
     await sendTableToDiscord(
-        table([["Navn", "Legendary", "Gold", "Silver", "Bronze"]].concat(warReadinessTable)),
+        table([["Navn", "Wins", "Legendary", "Gold", "Silver", "Bronze"]].concat(warReadinessTable)),
         event.discord_key,
         true
     );
