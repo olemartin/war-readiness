@@ -1,0 +1,7 @@
+{
+  "lambda": {
+    "role": "war-readiness-executor",
+    "name": "war-readiness",
+    "region": "eu-west-3"
+  }
+}
