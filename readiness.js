@@ -58,10 +58,10 @@ exports.handler = async (event, context, callback) => {
             const retur = {
                 name: player.name,
                 warDayWins: player.games.warDayWins,
-                legendary: percent.legendary / 92.0 * 100,
-                gold: percent.gold / 92.0 * 100,
-                silver: percent.silver / 92.0 * 100,
-                bronze: percent.bronze / 92.0 * 100,
+                legendary: percent.legendary / 95.0 * 100,
+                gold: percent.gold / 95.0 * 100,
+                silver: percent.silver / 95.0 * 100,
+                bronze: percent.bronze / 95.0 * 100,
             };
             console.log(retur);
             return retur;
