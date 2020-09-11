@@ -9,7 +9,7 @@
   "author": "",
   "license": "GPL-3.0",
   "dependencies": {
-    "node-fetch": "^2.2.0",
+    "node-fetch": "^2.6.1",
     "text-table": "^0.2.0"
   }
 }
